@@ -11,14 +11,7 @@
     "deploy": "gh-pages -d out"
   },  
   
-  // {
-  //   "dev": "next dev --turbopack",
-  //   "build": "next build --turbopack",
-  //   // "export": "next build && next export",
-  //   "deploy": "gh-pages -d out" ,
-  //   "start": "next start",
-  //   "lint": "eslint"
-  // },
+
   "dependencies": {
     "@hookform/resolvers": "^5.2.1",
     "@react-three/drei": "^10.7.5",
