@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   images: { unoptimized: true },
   basePath: "/kartik-portfolio",
   assetPrefix: "/kartik-portfolio/",
+  env: {
+    NEXT_PUBLIC_BASE_PATH: "/kartik-portfolio",
+  },
 };
 
 export default nextConfig;

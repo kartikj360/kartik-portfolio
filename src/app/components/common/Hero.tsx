@@ -22,7 +22,7 @@ export default function Hero() {
               <p className="mt-3 text-base sm:text-lg text-gray-600 dark:text-gray-400">{personalInfo.subtitle}</p>
             </div>
             <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full overflow-hidden justify-self-center md:justify-self-end ring-4 ring-white/70 dark:ring-gray-800/50">
-              <SafeImage src="/images/profile.jpg" fallbackSrc="/file.svg" alt="Portrait of Kartik Joshi" fill sizes="(max-width: 768px) 192px, (max-width: 1024px) 224px, 256px" className="object-cover" priority />
+              <SafeImage src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/profile.jpg`} fallbackSrc="/file.svg" alt="Portrait of Kartik Joshi" fill sizes="(max-width: 768px) 192px, (max-width: 1024px) 224px, 256px" className="object-cover" priority />
             </div>
           </div>
 

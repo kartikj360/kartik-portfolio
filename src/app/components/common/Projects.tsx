@@ -20,7 +20,8 @@ export default function Projects() {
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => {
             const slug = slugify(p.title);
-            const imageSrc = `/images/projects/${slug}.jpg`;
+            const base = process.env.NEXT_PUBLIC_BASE_PATH || '';
+            const imageSrc = `${base}/images/projects/${slug}.jpg`;
 
             return (
               <motion.div key={p.title} className="rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden flex flex-col" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
