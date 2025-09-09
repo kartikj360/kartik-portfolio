@@ -1,0 +1,213 @@
+# .cursorrules for Kartik Joshi's Portfolio Website
+
+## Project Overview
+You are helping build a modern, professional portfolio website for Kartik Joshi, a Data Scientist and AI Research Engineer with expertise in Machine Learning, Deep Learning, and Bioinformatics.
+
+## Tech Stack Requirements
+- **Frontend Framework**: React.js with TypeScript (preferred) or Next.js
+- **Styling**: Tailwind CSS for responsive design
+- **Animations**: Framer Motion for smooth interactions
+- **Icons**: Lucide React or Heroicons
+- **Deployment**: Vercel or Netlify
+- **Optional**: Three.js for 3D elements (if adding interactive visualizations)
+
+## Design Principles
+- **Modern & Clean**: Minimalist design with plenty of whitespace
+- **Professional**: Suitable for data science/AI industry standards
+- **Responsive**: Mobile-first approach, works on all devices
+- **Performance**: Fast loading, optimized images and code
+- **Accessibility**: WCAG 2.1 compliant, proper semantic HTML
+- **Dark/Light Mode**: Toggle between themes
+
+## Website Structure
+### 1. Header/Navigation
+- Sticky navigation with smooth scroll to sections
+- Logo/Name on left, navigation menu on right
+- Mobile hamburger menu
+- Dark/light mode toggle
+- Contact CTA button
+
+### 2. Hero Section
+- Professional headshot (placeholder for now)
+- Name: "Kartik Joshi"
+- Title: "Data Scientist | AI Research Engineer | ML Specialist"
+- Subtitle: "Researcher at HSE University | Expert in Python, Deep Learning & Bioinformatics"
+- Location: "Moscow, Russia"
+- Primary CTA: "View My Work" (scroll to projects)
+- Secondary CTA: "Download Resume" (PDF download)
+- Social links: LinkedIn, GitHub, Personal (linktr.ee)
+
+### 3. About Section
+**Content**: 
+"Data Scientist with strong expertise in Machine Learning, Deep Learning, and Big Data Analytics. Recently graduated with M.S. in Applied Mathematics and AI from Higher School of Economics, Moscow, following B.S. in Computer Science from University of Delhi.
+
+Currently working as Research Assistant at Laboratory on AI for Computational Biology (HSE), processing 10+ TB proteomics datasets and developing ML pipelines that improved peptide database diversity by 40%."
+
+**Key Stats** (in cards):
+- 10+ TB: Proteomics data processed
+- 90%: ML model accuracy achieved
+- 600+ GB: Clean data curated
+- 50+: Team members led
+
+### 4. Experience Section
+**Timeline format with:**
+- **Current**: Research Assistant at HSE University (Jan 2024 - Present)
+- **Leadership**: Vice President, Indian Club HSE (July 2024 - Present)
+- **Previous**: President, Parikalan Society (Oct 2022 - June 2023)
+- **Other roles**: Include key positions with brief descriptions
+
+### 5. Projects Section
+**Featured Projects (4-6 cards):**
+
+**Project 1: Meta-proteomics ML Pipeline**
+- Description: Curated 600+ GB clean data, processed 100 TB raw datasets for DL-based de novo models
+- Tech: Python, TensorFlow, PySpark, Proteomics
+- GitHub link (placeholder)
+
+**Project 2: Heart Patient Mortality Prediction**
+- Description: Supervised ML model achieving 90% accuracy in classification
+- Tech: Python, Scikit-learn, Pandas, Statistical Modeling
+- GitHub link (placeholder)
+
+**Project 3: SECURE SCAN**
+- Description: Security-focused QR scanner with 100% compatibility across QR types
+- Tech: Python, Computer Vision, Security Protocols
+- GitHub link (placeholder)
+
+**Project 4: Flight Management System**
+- Description: Efficient file-handling system for scheduling and reporting
+- Tech: C++, System Design, Database Management
+- GitHub link (placeholder)
+
+### 6. Skills Section
+**Organized in categories:**
+
+**Programming Languages**
+- Python (Expert) - NumPy, Pandas, Scikit-learn, TensorFlow, PyTorch
+- SQL (Advanced)
+- R (Intermediate)
+- C++ (Intermediate)
+
+**Big Data & Cloud**
+- PySpark (Advanced)
+- Azure (Hands-on)
+- GCP/AWS (Exposure)
+
+**Data Visualization**
+- Tableau, Power BI, Matplotlib, Plotly
+
+**Tools & Technologies**
+- GitHub, Linux, REST API Integration
+- Pyteomics, Bioinformatics Tools
+
+### 7. Education Section
+**Timeline cards:**
+- **M.S. Data Science and AI** - Higher School of Economics (2023-2025)
+- **B.S. Computer Science** - PGDAV College, University of Delhi (2020-2023)
+- **High School** - St. Theresa's Convent (2008-2020)
+
+### 8. Achievements Section
+**Highlight cards:**
+- HSE Gold Scholarship (100% tuition by Russian Federation)
+- Best Student of Computer Science Department, University of Delhi
+- Led 50+ member technical society
+- Organized 15+ tech events and hackathons
+
+### 9. Contact Section
+**Contact form with:**
+- Name, Email, Subject, Message fields
+- Form validation
+- Success/error messages
+- Alternative contact methods:
+  - Email: kartikjoshi0172@gmail.com
+  - LinkedIn: linkedin.com/in/kartikj360
+  - Location: Moscow, Russia
+
+### 10. Footer
+- Copyright notice
+- Social links
+- Quick navigation
+- "Made with ❤️ by Kartik" or similar
+
+## Development Guidelines
+1. **Component Structure**: Create reusable components for sections
+2. **State Management**: Use React hooks for local state, Context for global state
+3. **Performance**: Lazy load images, optimize bundle size
+4. **SEO**: Proper meta tags, structured data, sitemap
+5. **Analytics**: Google Analytics integration ready
+6. **Forms**: Use libraries like React Hook Form for validation
+
+## Code Style
+- Use functional components with hooks
+- TypeScript for type safety
+- ESLint + Prettier for code formatting
+- Consistent naming conventions (camelCase for variables, PascalCase for components)
+- Meaningful component and variable names
+- Comprehensive comments for complex logic
+
+## Responsive Design
+- Mobile: 320px - 768px
+- Tablet: 768px - 1024px
+- Desktop: 1024px+
+- Use Tailwind's responsive prefixes (sm:, md:, lg:, xl:)
+
+## Animation Guidelines
+- Smooth page transitions
+- Hover effects on interactive elements
+- Scroll-triggered animations (fade-in, slide-up)
+- Loading animations
+- Subtle micro-interactions
+- Performance-optimized animations (60fps)
+
+## Content Guidelines
+- Use professional, technical language appropriate for data science field
+- Quantify achievements with numbers and percentages
+- Keep descriptions concise but informative
+- Maintain consistent tone throughout
+- Ensure all technical terms are accurate
+
+## File Organization
+```
+src/
+├── components/
+│   ├── common/
+│   ├── sections/
+│   └── ui/
+├── hooks/
+├── utils/
+├── styles/
+├── assets/
+└── data/
+```
+
+## Testing
+- Unit tests for utility functions
+- Component testing with React Testing Library
+- Accessibility testing
+- Cross-browser compatibility testing
+- Mobile responsiveness testing
+
+## Deployment
+- Build optimization for production
+- Environment variables for sensitive data
+- CDN for static assets
+- SSL certificate
+- Custom domain setup
+
+## Additional Features to Consider
+- Blog section for Medium articles
+- Downloadable resume (PDF)
+- Project case studies with detailed breakdowns
+- Testimonials section (if available)
+- Interactive data visualization demos
+- GitHub activity integration
+- Email newsletter signup
+- Multi-language support (English/Russian)
+
+## Brand Colors (Suggestions)
+- Primary: Modern blue (#2563eb) or tech green (#059669)
+- Secondary: Accent color (#7c3aed or #dc2626)
+- Neutral: Grays for text and backgrounds
+- Dark mode: Rich blacks and whites
+
+Remember to maintain consistency with the professional data science/AI industry aesthetic while showcasing Kartik's technical expertise and research background.
