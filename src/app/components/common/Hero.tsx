@@ -30,7 +30,7 @@ export default function Hero() {
             <a href="#projects" className="inline-flex items-center gap-2 rounded-md bg-blue-600 text-white px-5 py-3 text-sm font-medium hover:bg-blue-700 transition-colors">
               <ArrowDown size={16} /> View My Work
             </a>
-            <a href="/resume.pdf" className="inline-flex items-center gap-2 rounded-md border border-gray-300 dark:border-gray-700 px-5 py-3 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" download>
+            <a href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/resume.pdf`} className="inline-flex items-center gap-2 rounded-md border border-gray-300 dark:border-gray-700 px-5 py-3 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" download>
               <Download size={16} /> Download Resume
             </a>
           </motion.div>

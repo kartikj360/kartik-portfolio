@@ -36,3 +36,4 @@ export default function ProjectCard({ title, description, tech, github, demo }: 
   );
 }
 
+

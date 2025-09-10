@@ -6,6 +6,7 @@ type ExperienceItem = {
   period: string;
   description?: string;
   bullets?: string[];
+  images?: string[];
 };
 
 const workExperiences: ExperienceItem[] = [
@@ -19,7 +20,8 @@ const workExperiences: ExperienceItem[] = [
       'Developing data-driven solutions for complex biological datasets, ensuring high-quality data preprocessing, feature engineering, and statistical modeling.',
       'Utilizing TensorFlow, PySpark, and Pandas/Seaborn for data visualization, analytics, and model development.',
       'Collaborating with multidisciplinary teams to optimize quantitative analytics workflows.'
-    ]
+    ],
+    images: ['hse-1.jpg', 'hse-2.jpg']
   },
   {
     role: 'Centralized Allocation Facilitator',
@@ -29,7 +31,8 @@ const workExperiences: ExperienceItem[] = [
       'Analyzed and managed data-driven allocation of university extracurricular activities (ECA) seats, optimizing fairness and efficiency.',
       'Utilized Microsoft Excel, Pandas, and Tableau to process and visualize large datasets for decision-making.',
       'Assisted in streamlining the selection process for student activities, ensuring transparency and accuracy.'
-    ]
+    ],
+    images: ['eca-1.jpg', 'eca-2.jpg']
   }
 ];
 
@@ -43,18 +46,21 @@ const organizationExperiences: ExperienceItem[] = [
       'Overseeing student support initiatives for the Indian student community, ensuring seamless communication and problem resolution.',
       'Managing community outreach programs, facilitating networking opportunities, and supporting new students in their academic and social transition.',
       'Leading event planning and execution, fostering collaboration between different student groups and university departments.'
-    ]
+    ],
+    images: ['indian-club-1.jpg', 'indian-club-2.jpg', 'indian-club-3.jpg']
   },
   {
     role: 'Member',
     org: 'Indian Club HSE',
-    period: 'Nov 2023 - Jul 2024 (9 months) · Moscow City, Russia'
+    period: 'Nov 2023 - Jul 2024 (9 months) · Moscow City, Russia',
+    images: ['indian-club-4.jpg']
   },
   {
     role: 'Writer',
     org: 'Self-employed',
     period: 'Jan 2023 - Present · Remote',
-    description: 'Writing research based technical blogs on Medium.'
+    description: 'Writing research based technical blogs on Medium.',
+    images: ['writer-1.jpg']
   },
   {
     role: 'President',
@@ -65,7 +71,8 @@ const organizationExperiences: ExperienceItem[] = [
       'Managed and coordinated six specialized clubs under the society, including programming, AI/ML, cybersecurity, and development groups.',
       'Spearheaded the planning and execution of Xenium-2023 (Annual Fest), attracting large participation and industry engagement.',
       'Organized 15+ tech events, workshops, and hackathons, enhancing student learning and exposure to real-world applications.'
-    ]
+    ],
+    images: ['parikalan-1.jpg', 'parikalan-2.jpg']
   },
   {
     role: 'Coordinator',
@@ -74,12 +81,14 @@ const organizationExperiences: ExperienceItem[] = [
     bullets: [
       'Assisted in managing society operations, ensuring smooth coordination between event organizers and faculty.',
       'Facilitated brainstorming sessions and mentored junior members in technical and organizational skills.'
-    ]
+    ],
+    images: ['parikalan-3.jpg']
   },
   {
     role: 'Member',
     org: 'Parikalan - Computer Science Society, PGDAV College',
-    period: 'Aug 2021 - Jun 2022 (11 months) · Delhi, India'
+    period: 'Aug 2021 - Jun 2022 (11 months) · Delhi, India',
+    images: ['parikalan-4.jpg']
   },
   {
     role: 'Member',
@@ -88,7 +97,8 @@ const organizationExperiences: ExperienceItem[] = [
     bullets: [
       'Engaged in technical discussions, hackathons, and project collaborations, enhancing hands-on skills in software development and IT solutions.',
       'Assisted in organizing coding competitions, seminars, and workshops focused on emerging technologies.'
-    ]
+    ],
+    images: ['techwhiz-1.jpg']
   },
   {
     role: 'Member',
@@ -97,7 +107,8 @@ const organizationExperiences: ExperienceItem[] = [
     bullets: [
       'Participated in theatrical productions, focusing on social issues and expressive storytelling.',
       'Developed skills in public speaking, stage performance, and improvisational acting, contributing to impactful performances.'
-    ]
+    ],
+    images: ['rudra-1.jpg']
   },
   {
     role: 'Frontend Web Developer',
@@ -107,7 +118,8 @@ const organizationExperiences: ExperienceItem[] = [
       'Designed and developed interactive web applications using HTML, CSS, and JavaScript.',
       'Contributed to open-source projects and participated in hackathons and collaborative coding sessions.',
       'Strengthened problem-solving abilities through structured coding challenges and real-world project development.'
-    ]
+    ],
+    images: ['dsc-1.jpg']
   }
 ];
 
@@ -133,6 +145,20 @@ export default function Experience() {
                   ))}
                 </ul>
               )}
+              {item.images && item.images.length > 0 && (
+                <div className="mt-4 grid grid-cols-3 gap-3">
+                  {item.images.slice(0, 3).map((img) => {
+                    const base = process.env.NEXT_PUBLIC_BASE_PATH || '';
+                    const src = `${base}/images/experience/${img}`;
+                    return (
+                      <div key={img} className="relative w-full h-24 rounded-md overflow-hidden bg-gray-100 dark:bg-gray-800">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={src} alt={`${item.org} photo`} className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).src = `${base}/file.svg`; }} />
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </motion.li>
           ))}
         </ol>
@@ -154,6 +180,20 @@ export default function Experience() {
                     <li key={b}>{b}</li>
                   ))}
                 </ul>
+              )}
+              {item.images && item.images.length > 0 && (
+                <div className="mt-4 grid grid-cols-3 gap-3">
+                  {item.images.slice(0, 3).map((img) => {
+                    const base = process.env.NEXT_PUBLIC_BASE_PATH || '';
+                    const src = `${base}/images/organizations/${img}`;
+                    return (
+                      <div key={img} className="relative w-full h-24 rounded-md overflow-hidden bg-gray-100 dark:bg-gray-800">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={src} alt={`${item.org} photo`} className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).src = `${base}/file.svg`; }} />
+                      </div>
+                    );
+                  })}
+                </div>
               )}
             </motion.li>
           ))}
