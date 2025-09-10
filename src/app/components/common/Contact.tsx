@@ -20,16 +20,41 @@ const schema: yup.ObjectSchema<ContactFormValues> = yup.object({
 });
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<ContactFormValues>({
     resolver: yupResolver(schema)
   });
 
   const onSubmit = async (data: ContactFormValues) => {
-    // TODO: Integrate API or email service (e.g., Resend, Formspree)
-    console.log('Contact form submission:', data);
-    setSubmitted(true);
-    reset();
-    setTimeout(() => setSubmitted(false), 4000);
+    setError(null);
+    try {
+      const response = await fetch('https://formspree.io/f/xnnbwboq', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          subject: data.subject || '',
+          message: data.message
+        })
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (response.ok) {
+        setSubmitted(true);
+        reset();
+        setTimeout(() => setSubmitted(false), 4000);
+      } else {
+        const msg = (result && (result.error || result.errors?.[0]?.message)) || 'Something went wrong. Please try again.';
+        setError(msg);
+      }
+    } catch (e) {
+      setError('Network error. Please try again later.');
+    }
   };
   return (
     <section id="contact" className="py-20 bg-white dark:bg-gray-900">
@@ -55,6 +80,7 @@ export default function Contact() {
             </div>
             <button className="inline-flex justify-center rounded-md bg-blue-600 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 disabled:opacity-70" type="submit" disabled={isSubmitting}>{isSubmitting ? 'Sending...' : 'Send'}</button>
             {submitted && <p className="text-xs text-green-600">Thanks! Your message has been sent.</p>}
+            {error && <p className="text-xs text-red-600">{error}</p>}
           </motion.form>
 
           <motion.div className="rounded-xl border border-gray-200 dark:border-gray-800 p-5" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
