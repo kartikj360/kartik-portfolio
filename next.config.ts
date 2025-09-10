@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   images: { unoptimized: true },
   basePath: "/kartik-portfolio",
   assetPrefix: "/kartik-portfolio/",
+  outputFileTracingRoot: "F:/My programs/Website/kartik-portfolio",
   env: {
     NEXT_PUBLIC_BASE_PATH: "/kartik-portfolio",
   },
