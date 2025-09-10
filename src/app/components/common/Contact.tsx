@@ -88,7 +88,7 @@ export default function Contact() {
             <ul className="mt-3 grid gap-2 text-sm text-gray-700 dark:text-gray-300">
               <li>Email: kartikjoshi0172@gmail.com</li>
               <li>LinkedIn: linkedin.com/in/kartikj360</li>
-              <li>Location: Moscow, Russia</li>
+              <li>Location: India </li>
             </ul>
           </motion.div>
         </div>
