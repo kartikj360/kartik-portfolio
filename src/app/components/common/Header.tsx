@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navItems = ['About', 'Experience', 'Projects', 'Skills', 'Publications', 'Contact'];
+  const navItems = ['About', 'Experience', 'Projects', 'Skills', 'Publications', 'Thesis', 'Contact'];
 
   return (
     <header className="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-700">

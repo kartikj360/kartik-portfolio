@@ -2,12 +2,12 @@ export const personalInfo = {
     name: "Kartik Joshi",
     title: "Data Scientist | AI Research Engineer | ML Specialist",
     subtitle: "Researcher at HSE University | Expert in Python, Deep Learning & Bioinformatics",
-    location: "Moscow, Russia",
+    location: "India",
     email: "kartikjoshi0172@gmail.com",
     linkedin: "https://linkedin.com/in/kartikj360",
     github: "https://github.com/kartikj360",
     personal: "https://linktr.ee/kartikjoshi360",
-    hseProfile: "https://www.hse.ru/en/org/persons/904681345"
+    hseProfile: "https://web.archive.org/web/20250427210359/https://www.hse.ru/en/org/persons/904681345/"
   };
   
   export const projects = [

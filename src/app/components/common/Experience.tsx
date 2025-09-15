@@ -32,7 +32,7 @@ const workExperiences: ExperienceItem[] = [
       'Utilized Microsoft Excel, Pandas, and Tableau to process and visualize large datasets for decision-making.',
       'Assisted in streamlining the selection process for student activities, ensuring transparency and accuracy.'
     ],
-    images: ['eca-1.jpg', 'eca-2.jpg']
+    images: ['eca-1.jpg']
   }
 ];
 

@@ -7,7 +7,8 @@ import Skills from './components/common/Skills';
 import Education from './components/common/Education';
 import Footer from './components/common/Footer';
 import Contact from './components/common/Contact';
-import Achievements, { Publications } from './components/common/Achievements';
+import Achievements, { Publications, Thesis } from './components/common/Achievements';
+import Hobbies from './components/common/Hobbies';
 
 export default function Home() {
   return (
@@ -22,6 +23,8 @@ export default function Home() {
         <Education />
         <Achievements />
         <Publications />
+        <Thesis />
+        <Hobbies />
         <Contact />
       </main>
       <Footer />
